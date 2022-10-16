@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+            /* display: grid;
+            place-items: center; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            background: linear-gradient(to left, #ffdfde,#af6f6f);
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            /* letter-spacing: 2px; */
+        }
+        .cont{
+            /* position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); */
+
+            display: flex; 
+            justify-content: center;
+            width: 40%;  
+            border-radius: 5px;
+            box-shadow: 0px 0px 30px 5px;
+
+                
+        }
+        .left{
+            flex:3;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .right{
+            flex:2;
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            justify-content: center;
+            background-color:rgba(255, 255, 255, 0.596);
+            
+        }
+        .right *{
+            margin: 10px auto;
+        }
+        h3{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+        input{
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            border:1px solid #ea878500;
+            
+        }
+        input:focus{
+            outline: none;
+            border:1px solid #ea8785;
+            
+        }
+        .buton{
+            width: 100%;
+            background: #fd9795;
+            color: white;
+        }
+        .buton:hover{
+            box-shadow: inset 0px 0px 15px 1px #312f2f2d;
+            
+        }
+        .buton:focus{
+            background: #ee8f8d;
+            border:1px solid #854d4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="left">
+            <img src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI" alt="">
+        </div>
+        <div class="right">
+            <h3>Sign-in</h3>
+            <label  for="">Nom d'utilisateur</label>
+            <input class="data" placeholder="Nom d'utilisateur" type="text" name="" id="">
+            <label  for=""> Mot de pass</label>
+            <input class="data" placeholder="Password" type="password" name="" id="">
+            <input class="buton" type="button" value="Connexion">
+
+        </div>
+    </div>
+</body>
+</html>
