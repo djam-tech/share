@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <title>Document</title>
+    <style>
+        *{  padding: 0px;
+            margin: 0px;
+            color: aliceblue;
+            text-transform: capitalize;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        html, body {
+            height: 100%;
+            }
+
+            
+        nav{
+            background-color: rgb(81, 132, 190);
+            padding: 20px 40px;
+            
+            display: flex;
+            justify-content: space-between;
+        }
+        h3{
+            font-size: x-large;
+        }
+        nav>ul{
+            list-style: none;
+        }
+        nav li{
+            margin-left: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 5px;
+            transition-property: background-color;
+            transition-duration: 400ms;
+            cursor: pointer;
+        }
+        nav li:hover{
+            background-color: rgb(102, 146, 196);
+        }
+        .check{
+            color: aliceblue;
+        }
+        .check-container{
+            display: none;
+
+        }
+        #check{
+            display: none;
+        }
+        @media (max-width:600px){
+            .check-container{
+            display: block;
+        }
+            nav{
+                display: block;
+                
+            } 
+            
+            .check-container{
+                float: right;
+                clear: both;
+            }
+            ul{top: 67px;
+                position: absolute;
+                width: 100%;
+                height: calc(100vh - 68px);
+                display: block;
+               text-align: center;
+               left: -100%;
+               background-color: rgb(102, 146, 196);
+               transition: all .5s;
+
+
+            }
+            ul>li{
+                display: block;
+                padding: 20px;
+            }
+            .full-height {
+            height: 100%;
+            }
+            #check:checked ~ ul{
+                left: 0px;
+            }
+
+
+        }
+        
+    </style>
+</head>
+<body>
+    <nav >
+        
+        <label for="check" class="check check-container" >
+            <div style="transform: rotate(90deg);display: inline-block;">
+                |||
+            </div>
+        </label>
+        
+        <h3>LOGO</h3>
+        <div class="full-height">
+            <input type="checkbox"  id='check'/>
+            <ul>
+                <li>Home </li>
+                <li>about</li>
+                <li>services</li>
+                <li>contact</li>
+            </ul>
+        </div>
+    </nav>
+    
+</body>
+</html>

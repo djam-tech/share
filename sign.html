@@ -34,7 +34,7 @@
 
             display: flex; 
             justify-content: center;
-            width: 40%;  
+            width: 45%;  
             border-radius: 5px;
             box-shadow: 0px 0px 30px 5px;
 
@@ -42,12 +42,14 @@
         }
         .left{
             flex:3;
+            background-image: url("https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI");
+            background-size: 100% ;
         }
-        img{
+        /* img{
             height: 100%;
             width: 100%;
             object-fit: cover;
-        }
+        } */
         .right{
             flex:2;
             display: flex;
@@ -69,6 +71,7 @@
             border: none;
             border-radius: 5px;
             border:1px solid #ea878500;
+            width: calc(100% - 20px);
             
         }
         input:focus{
@@ -82,19 +85,39 @@
             color: white;
         }
         .buton:hover{
-            box-shadow: inset 0px 0px 15px 1px #312f2f2d;
-            
+            box-shadow: inset 0px 0px 15px 1px #312f2f2d;           
         }
         .buton:focus{
             background: #ee8f8d;
             border:1px solid #854d4b;
         }
+        @media screen and (max-width: 992px) and (min-width: 600px) {
+            .cont{
+                width: 60%;
+            }
+        }
+        @media screen  and (max-width: 600px) {
+            .cont{
+                width: 80%;
+                flex-direction: column;        
+                height: 90vh;
+            }
+            .left{
+                flex:2;
+            }
+            .right{
+                flex:5;
+            }
+            input{
+                width: calc(100% - 20px);
+            }
+        }        
     </style>
 </head>
 <body>
     <div class="cont">
         <div class="left">
-            <img src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI" alt="">
+            <!-- <img src="https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI" alt=""> -->
         </div>
         <div class="right">
             <h3>Sign-in</h3>
