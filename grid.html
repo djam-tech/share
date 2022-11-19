@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        *{  padding: 0px;
+            margin: 0px;
+            
+            text-transform: capitalize;
+            
+        }
+         body {
+            height: 100%;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            display: grid;
+            color: white;
+            min-height: 100vh;
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: 70px auto auto;
+            grid-template-areas: 
+                "nav  nav  nav"
+                "side main main"
+                "side footer footer ";
+            }
+
+
+            
+        nav{
+            grid-area: nav;
+            background-color:#6fa4a7;
+            padding: 20px 40px;
+            
+            display: flex;
+            justify-content: space-between;
+        }
+        h3{
+            font-size: x-large;
+        }
+        nav>ul{
+            list-style: none;
+        }
+        nav li{
+            margin-left: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 5px;
+            transition-property: background-color;
+            transition-duration: 400ms;
+            cursor: pointer;
+        }
+        nav li:hover{
+            background-color: #598688;
+        }
+        .check{
+            color: aliceblue;
+        }
+        .check-container{
+            display: none;
+
+        }
+        #check{
+            display: none;
+        }
+
+
+        .main{
+            grid-area: main;
+            /* background: blueviolet; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            color: black;
+            padding: 15px;
+
+        }
+
+
+        .main .card{
+            display: flex;
+            flex-direction: column;
+            /* box-shadow: 0px 0px 5px 0px ; */
+
+            
+            /* border:2px solid black; */
+            height: 400px;
+            /* box-shadow: 0px 0px 10px 1px ; */
+            transition: all 0.2s;
+            
+
+        }
+        .card:hover{
+            transform: translateY(-7px);
+            box-shadow: 0px 0px 10px 1px ;
+
+        }
+        .main .card .image{
+            background-image: url('https://i.picsum.photos/id/1019/5472/3648.jpg?hmac=2mFzeV1mPbDvR0WmuOWSiW61mf9DDEVPDL0RVvg1HPs');
+            flex:3;
+            background-size: 100% 100%;
+
+        }
+        .image:nth-child(1){
+            background-image: url('https://i.picsum.photos/id/1021/2048/1206.jpg?hmac=fqT2NWHx783Pily1V_39ug_GFH1A4GlbmOMu8NWB3Ts');
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(2){
+            background-image: url('https://i.picsum.photos/id/1020/4288/2848.jpg?hmac=Jo3ofatg0fee3HGOliAIIkcg4KGXC8UOTO1dm5qIIPc');
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(3){
+            background-image: url('https://i.picsum.photos/id/1019/5472/3648.jpg?hmac=2mFzeV1mPbDvR0WmuOWSiW61mf9DDEVPDL0RVvg1HPs');
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(4){
+            background-image: url("https://i.picsum.photos/id/1015/6000/4000.jpg?hmac=aHjb0fRa1t14DTIEBcoC12c5rAXOSwnVlaA5ujxPQ0I");
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(5){
+            background-image: url("https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk");
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(6){
+            background-image: url("https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs");
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(7){
+            background-image: url("https://i.picsum.photos/id/1033/2048/1365.jpg?hmac=zEuPfX7t6U866nzXjWF41bf-uxkKOnf1dDrHXmhcK-Q");
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .image:nth-child(8){
+            background-image: url("https://i.picsum.photos/id/1036/4608/3072.jpg?hmac=Tn9CS_V7lFSMMgAI5k1M38Mdj-YEJR9dPJCyeXNpnZc");
+            flex:3;
+            background-size: 100% 100%;
+        }
+        .main .card .cont{
+            flex:2;
+            padding-top: 5px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .main .card .cont h3{
+            padding: 10px 20px;
+        }
+        .main .card .cont p{
+            padding: 0px 20px;
+        }
+
+        button{
+            padding: 15px 5px;
+            border-width: 0;
+            transition: all 0.2s;
+            color: white;
+            background-color: #6fa4a7;
+            
+        }
+        button:hover{
+            /* color: black; */
+            background-color: #548789;
+        }
+        
+
+        .side{
+            grid-area: side;
+            background: #80b6b9;
+            
+            height: 100vh;
+            /* width: 100%; */
+            position: sticky;
+            padding-top: 20px;
+            top: 0px;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center;   */
+            
+            
+        }
+        .side li{
+            
+            background-color: rgba(255, 255, 255, 0);
+            transition: all 0.4s;
+        }
+        .side li:hover{
+            background-color: #548789;
+        }
+        .side ul{
+            list-style: none;
+        }
+        .side a{
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+            height: 100%;
+            display: block;
+        }
+        
+
+        .footer{
+            grid-area: footer;
+            background: plum;
+            height: 100px;
+        }
+
+        .footer{
+            background-color: #598688;
+            padding: 50px;
+            display: flex;
+        }
+        .footer p{
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        .footer h3{
+            text-transform: uppercase;
+        }
+
+        @media (max-width:600px){
+            .check-container{
+            display: block;
+        }
+            nav{
+                display: block;
+                
+            } 
+            
+            .check-container{
+                float: right;
+                clear: both;
+            }
+            ul{top: 67px;
+                position: absolute;
+                width: 100%;
+                height: calc(100vh - 68px);
+                display: block;
+               text-align: center;
+               left: -100%;
+               background-color: rgb(102, 146, 196);
+               transition: all .5s;
+
+
+            }
+            ul>li{
+                display: block;
+                padding: 20px;
+            }
+            .full-height {
+            height: 100%;
+            }
+            #check:checked ~ ul{
+                left: 0px;
+            }
+
+
+        }
+       
+        .white{
+            background-color: aliceblue;
+            color: black;
+        }
+    </style>
+    <script src="" >
+
+    </script>
+</head>
+<body>
+    <nav >
+        
+        <label for="check" class="check check-container" >
+            <div style="transform: rotate(90deg);display: inline-block;">
+                |||
+            </div>
+        </label>
+        
+        <h3 id="logo" class="">LOGO</h3>
+        <div class="full-height">
+            <input type="checkbox"  id='check'/>
+            <ul>
+                <li>Home </li>
+                <li>about</li>
+                <li>services</li>
+                <li>contact</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="side">
+        <ul>
+            <li><a href="">Link1</a></li>
+            <li><a href="">Link2</a></li>
+            <li><a href="">Link3</a></li>
+            <li><a href="">Link4</a></li>
+            <li></li>
+        </ul>
+    </div>
+    <main class="main">
+        <div class="card" 
+           
+        >
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE12</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div><div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="cont">
+                <h3 class="title">CARD TITLE</h3>
+                <p class="card-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, placeat possimus!
+                </p>
+                <button> Add to chart</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+            <h3>Grid </h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, veniam porro suscipit odio quas assumenda sed? Nesciunt, quisquam adipisci distinctio fugiat, beatae quia illo, quis facere optio sint tempora doloribus!</p>
+        </div>
+        
+        <div>
+            <h3>Address</h3>
+            <p class="add">
+                Department of computing science, university of Djillali Liabes, Sidi Bel Abes 22000.
+            </p>
+        </div>
+        <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum pariatur laborum consequuntur sint laboriosam? Ea, assumenda cum perferendis aut delectus non repellat fugit beatae, adipisci ut consequatur, eligendi soluta consequuntur?</p> -->
+    </footer>
+</body>
+</html>

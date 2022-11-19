@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #6bacaf, #253c3d);
+        }
+        .container{
+            display: flex;
+            padding: 30px;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+        input, button{
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="add">Add module</button>
+        <button id="moy">Moyenne</button>
+        <div class="module">
+            <input type="text" class="note" placeholder="note" value=""/>
+            <input type="text" class="coef" placeholder="coef" value=""/>
+        </div>
+        
+        
+    </div>
+
+    
+    <script>
+        let container= document.getElementsByClassName('container')[0]
+        
+        let modules =document.querySelectorAll('.module')
+        let add= document.getElementById('add')
+        let moy= document.getElementById('moy')
+        add.addEventListener('click', function(){
+            let newMod = document.createElement('div')
+            newMod.innerHTML = `<div class="module">
+                <input type="text" class="note" placeholder="note" value=""/>
+                <input type="text" class="coef" placeholder="coef" value=""/>
+            </div>`
+            container.appendChild(newMod)
+            
+
+            // let mod = document.createElement('div')
+            // mod.innerHTML=`<div class="module">
+            //     <input type="text" class="note" placeholder="note" value=""/>
+            //     <input type="text" class="coef" placeholder="coef" value=""/>        
+            //     </div>`
+            // container.appendChild(mod)
+        })
+        // moy.addEventListener('click', ()=>{
+        //     console.log('moyenne');
+        // })
+        moy.onclick = ()=>{
+            // console.log('moyenne');
+            let notes=[]
+            let totalCoef = 0
+            
+            let modules = document.querySelectorAll('.module')
+            // console.log('modules', modules);
+            // function element(element) {
+            //     console.log('element', element);
+            //     const note = element.children[0].value
+            //     const coef = element.children[1].value
+            //     notes.push(parseInt(note)*parseInt(coef))
+            //     totalCoef += parseInt(coef)
+            //     return 0
+            // }
+            for(let i=0; i<modules.length; i++){
+                const element = modules[i]
+                console.log('element', element);
+                const note = element.children[0].value
+                const coef = element.children[1].value
+                notes.push(parseInt(note)*parseInt(coef))
+                totalCoef += parseInt(coef)
+            }
+            let moy=notes.reduce((tot, el)=>{return tot+el},0)
+            console.log('Moyenne',moy/totalCoef);
+
+
+        }
+
+    </script>
+</body>
+</html>
