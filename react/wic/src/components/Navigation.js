@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom'
+
 import "./navigation.css";
 
 export default function Navigation() {
@@ -14,10 +16,10 @@ export default function Navigation() {
       <div className="full-height">
         <input type="checkbox" id="check" />
         <ul>
-          <li>Home </li>
-          <li>about</li>
-          <li>services</li>
-          <li>connexion</li>
+          <li><Link to='/'>Home</Link> </li>
+          <li><Link to='/todo'>Todo</Link></li>
+          <li><Link to='/compteur'>Compteur</Link></li>
+                    
         </ul>
       </div>
     </nav>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 export default function CompteurAuto() {
   const [nbre, setNbre] = useState(0);
+  const [first, setfirst] = useState('')
+  
   useEffect(() => {
     const int = setInterval(() => {
       setNbre((current) => current + 1);
@@ -11,6 +13,7 @@ export default function CompteurAuto() {
       clearInterval(int);
     };
   }, []);
+
   return (
     <div>
       <p>{nbre}</p>

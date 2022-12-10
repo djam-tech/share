@@ -12,3 +12,26 @@
     place-items: center;
     color: white;
     min-height: 100vh;}
+
+.todos-list{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.todo-item{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    
+    
+}
+.todo-item button{
+    padding: 4px;
+    background-color: rgb(173, 89, 89);
+    color: wheat;
+    outline: none;
+    border: 0px;
+    cursor: pointer;
+}

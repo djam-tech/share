@@ -2,3 +2,5 @@ tst.html
 /react/wic/node_modules
 /react/wic/.pnp
 /react/wic.pnp.js
+/react/django-server/*
+/react/sever/*

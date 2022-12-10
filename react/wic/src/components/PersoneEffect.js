@@ -9,10 +9,10 @@ export default function PersoneEffect() {
   const [inputValue, setInputVale] = useState("");
 
   useEffect(() => {
-    console.log("effect");
-  }, [persone.nom, persone.selected]);
+    console.log("effect", persone.nom);
+  },[persone.nom, persone.selected]);
 
-  console.log("render");
+  console.count("render");
 
   return (
     <div

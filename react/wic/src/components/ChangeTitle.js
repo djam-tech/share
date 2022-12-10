@@ -5,11 +5,11 @@ export default function ChangeTitle() {
 
   useEffect(() => {
     document.title = title;
-    console.log("effect");
+    console.count("effect");
     // const root =
   });
 
-  console.log("rendering");
+  console.count("Redering");
   return (
     <div>
       <input
