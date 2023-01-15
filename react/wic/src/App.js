@@ -19,6 +19,8 @@ import ArticlesList from "./components/CRUD/ArticlesList";
 import Home from "./components/Home";
 import ArticleItem from "./components/ArticleItem";
 
+import Exam from './components/Exam'
+
 
 
 export const MyContext = createContext("");
@@ -32,12 +34,15 @@ function App() {
     <MyContext.Provider value={{ hello, setHello }}>
       <PainerContext.Provider value={{panier, setPanier}}>
         <Navigation/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/todo" element={<TodoApp/>}/>
-        <Route path="/compteur" element={<CompteurAuto/>}/>
-        <Route path="/article/:id" element={<ArticleItem/>}/>
-      </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/todo" element={<TodoApp/>}/>
+            <Route path="/compteur" element={<CompteurAuto/>}/>
+            <Route path="/article/:id" element={<ArticleItem/>}/>
+            <Route path="/exam" element={<Exam/>}/>
+          </Routes>
+        </div>
 
         {/* <Compteur  /> */}
         {/* <Personne/> */}

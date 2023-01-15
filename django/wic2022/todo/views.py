@@ -4,6 +4,11 @@ from .models import Todo
 
 # Create your views here.
 
-def home(req):
+def home(request):
+    # print('req', request.GET['q'])
     todos = Todo.objects.all()
-    return HttpResponse('<h1>Hello</h1>')
+    # sortie = ''
+    # for todo in todos:
+    #     sortie = sortie+'<li>'+todo.title+'</li>'
+    # return HttpResponse('<ul>'+sortie+'</ul>')
+    return render(request, 'base.html', {'todos':todos})

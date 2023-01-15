@@ -19,6 +19,7 @@ export default function Navigation() {
           <li><Link to='/'>Home</Link> </li>
           <li><Link to='/todo'>Todo</Link></li>
           <li><Link to='/compteur'>Compteur</Link></li>
+          <li><Link to='/Exam'>Exam</Link></li>
                     
         </ul>
       </div>
