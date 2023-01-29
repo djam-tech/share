@@ -5,6 +5,7 @@ export default function ItemList() {
         {article:{id:0, title:'Article 1', disp:3}, qte:2},
         {article:{id:1, title:'Article 2', disp:4}, qte:1},
     ])
+    // (1.5pt)
     const ajoutQte = (id) =>{
         const disp = items.find(el=>el.article.id===id).article.disp
         const newItems = items.map(el=>{
@@ -15,6 +16,7 @@ export default function ItemList() {
             })
         setItems(newItems)
     }
+    //(1.5pt)
     const supQte = (id) =>{
         const newItems = items.map(el=>{
             if(el.article.id===id)
@@ -24,6 +26,7 @@ export default function ItemList() {
             })
         setItems(newItems)
     }
+    //(1pt)
   return (
     <div className='examen'>
         <h3>Examen</h3>
@@ -40,6 +43,7 @@ export default function ItemList() {
 }
 
 function Item({article, qte, ajoutQte, supQte}){
+    //(1pt)
     return(
         <li>
           {article.title}
